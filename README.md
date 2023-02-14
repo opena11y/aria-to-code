@@ -16,7 +16,7 @@ These steps assume you have both `git` and `node.js` installed on your computer.
 
 ### Step 3: Generating the JSON and JS files
 
-```npm run aria```
+```npm run build```
 
 The following four files are created in the `releases` directory.
 
