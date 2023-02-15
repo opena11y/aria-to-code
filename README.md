@@ -1,4 +1,4 @@
-# ARIA Specification to Code Generator Version 0.9
+# ARIA Specification to Code Generator Version 1.0 beta
 
 This utility parses the [ARIA ](https://www.w3.org/TR/wai-aria/) specification and generates a Javascript Object representing the information for the role design patterns, and information on the valid properties, states and values defined in the specification.  The object created is available as a [JSON object](releases/ariaInHtmlInfo.json) or as a [Javascript include file](releases/ariaInHtmlInfo.js).  It also generates two files that separate the properties and state information from the role design patterns issues.
 
