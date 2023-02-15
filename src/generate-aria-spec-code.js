@@ -13,8 +13,8 @@ import util  from 'util';
 import fetch from 'node-fetch';
 import HTMLParser from 'node-html-parser';
 
-const ariaInfoFilename          = path.join('releases', 'gen-aria-spec-info.js');
-const ariaInfoFilenameJSON      = path.join('releases', 'gen-aria-spec-info.json');
+const ariaInfoFilename          = path.join('releases', 'gen-aria-info.js');
+const ariaInfoFilenameJSON      = path.join('releases', 'gen-aria-info.json');
 const designPatternsFilename    = path.join('releases', 'gen-aria-role-design-patterns.js');
 const propertyDataTypesFilename = path.join('releases', 'gen-aria-property-data-types.js');
 
