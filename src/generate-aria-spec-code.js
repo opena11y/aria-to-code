@@ -13,10 +13,10 @@ import util  from 'util';
 import fetch from 'node-fetch';
 import HTMLParser from 'node-html-parser';
 
-const ariaInfoFilename          = path.join('releases', 'aria-spec-info.js');
-const ariaInfoFilenameJSON      = path.join('releases', 'aria-spec-info.json');
-const designPatternsFilename    = path.join('releases', 'aria-role-design-patterns.js');
-const propertyDataTypesFilename = path.join('releases', 'aria-property-data-types.js');
+const ariaInfoFilename          = path.join('releases', 'gen-aria-spec-info.js');
+const ariaInfoFilenameJSON      = path.join('releases', 'gen-aria-spec-info.json');
+const designPatternsFilename    = path.join('releases', 'gen-aria-role-design-patterns.js');
+const propertyDataTypesFilename = path.join('releases', 'gen-aria-property-data-types.js');
 
 let ariaURL = 'https://www.w3.org/TR/wai-aria-1.2/';
 
@@ -446,7 +446,7 @@ function outputAsJSON(filename, info) {
 }
 
 function outputAsJSObject(filename, constName, info, data) {
-  const exportPrefix = `/* ${path.basename(filename)} is a generated file, use "npm run aria" */\nexport const ${constName} = `;
+  const exportPrefix = `/* ${path.basename(filename)} is a generated file, use "npm run build" */\nexport const ${constName} = `;
   const exportSuffix = `;${os.EOL}`;
 
   fs.writeFile(filename, exportPrefix + util.inspect(data, { compact: false, depth: null }) + exportSuffix, err => {

@@ -1,4 +1,4 @@
-/* aria-role-design-patterns.js is a generated file, use "npm run aria" */
+/* gen-aria-role-design-patterns.js is a generated file, use "npm run build" */
 export const designPatterns = {
   alert: {
     inheritedProps: [
