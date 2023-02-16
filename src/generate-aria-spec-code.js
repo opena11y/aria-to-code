@@ -1,10 +1,4 @@
-#!/usr/bin/env node
-/*
- *   This content is licensed according to the W3C Software License at
- *   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
- *
- *   File:   reference-tables.js
- */
+/* generate-aria-spec-code.js */
 
 import fs    from 'fs';
 import os    from 'os';
@@ -446,7 +440,7 @@ function outputAsJSON(filename, info) {
 }
 
 function outputAsJSObject(filename, constName, info, data) {
-  const exportPrefix = `/* ${path.basename(filename)} is a generated file, use "npm run build" */\nexport const ${constName} = `;
+  const exportPrefix = `/* ${path.basename(filename)} is a generated file, see https://github.com/opena11y/aria-to-code */\nexport default const ${constName} = `;
   const exportSuffix = `;${os.EOL}`;
 
   fs.writeFile(filename, exportPrefix + util.inspect(data, { compact: false, depth: null }) + exportSuffix, err => {

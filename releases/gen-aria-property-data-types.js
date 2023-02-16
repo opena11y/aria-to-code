@@ -1,5 +1,5 @@
-/* gen-aria-property-data-types.js is a generated file, use "npm run build" */
-export const propertyDataTypes = {
+/* gen-aria-property-data-types.js is a generated file, see https://github.com/opena11y/aria-to-code */
+export default const propertyDataTypes = {
   'aria-activedescendant': {
     propType: 'property',
     type: 'idref',

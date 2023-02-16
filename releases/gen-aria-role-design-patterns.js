@@ -1,5 +1,5 @@
-/* gen-aria-role-design-patterns.js is a generated file, use "npm run build" */
-export const designPatterns = {
+/* gen-aria-role-design-patterns.js is a generated file, see https://github.com/opena11y/aria-to-code */
+export default const designPatterns = {
   alert: {
     inheritedProps: [
       'aria-atomic',
