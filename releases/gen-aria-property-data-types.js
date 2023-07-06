@@ -1,5 +1,5 @@
 /* gen-aria-property-data-types.js is a generated file, see https://github.com/opena11y/aria-to-code */
-export default const propertyDataTypes = {
+export const propertyDataTypes = {
   'aria-activedescendant': {
     propType: 'property',
     type: 'idref',

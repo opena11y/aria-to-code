@@ -1,5 +1,5 @@
 /* gen-aria-role-design-patterns.js is a generated file, see https://github.com/opena11y/aria-to-code */
-export default const designPatterns = {
+export const designPatterns = {
   alert: {
     inheritedProps: [
       'aria-atomic',
@@ -3129,13 +3129,61 @@ export default const designPatterns = {
       'aria-invalid'
     ],
     supportedProps: [
+      'aria-orientation'
+    ],
+    hasRange: false,
+    requiredProps: [],
+    nameRequired: false,
+    nameFromContent: false,
+    nameProhibited: false,
+    childrenPresentational: true,
+    requiredParents: [],
+    requiredChildren: [],
+    roleType: 'structure',
+    isAbstract: false
+  },
+  separatorFocusable: {
+    inheritedProps: [
+      'aria-atomic',
+      'aria-busy',
+      'aria-controls',
+      'aria-current',
+      'aria-describedby',
+      'aria-details',
+      'aria-dropeffect',
+      'aria-errormessage',
+      'aria-flowto',
+      'aria-grabbed',
+      'aria-haspopup',
+      'aria-hidden',
+      'aria-invalid',
+      'aria-keyshortcuts',
+      'aria-label',
+      'aria-labelledby',
+      'aria-live',
+      'aria-owns',
+      'aria-relevant',
+      'aria-roledescription',
+      'aria-valuenow',
       'aria-disabled',
       'aria-orientation',
       'aria-valuemax',
       'aria-valuemin',
       'aria-valuetext'
     ],
-    hasRange: false,
+    deprecatedProps: [
+      'aria-errormessage',
+      'aria-haspopup',
+      'aria-invalid'
+    ],
+    supportedProps: [
+      'aria-disabled',
+      'aria-orientation',
+      'aria-valuemax',
+      'aria-valuemin',
+      'aria-valuetext'
+    ],
+    hasRange: true,
     requiredProps: [
       'aria-valuenow'
     ],
@@ -3145,7 +3193,7 @@ export default const designPatterns = {
     childrenPresentational: true,
     requiredParents: [],
     requiredChildren: [],
-    roleType: 'structure widget',
+    roleType: 'widget range',
     isAbstract: false
   },
   slider: {

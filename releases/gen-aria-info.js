@@ -1,7 +1,7 @@
 /* gen-aria-info.js is a generated file, see https://github.com/opena11y/aria-to-code */
-export default const ariaInfo = {
+export const ariaInfo = {
   title: 'Accessible Rich Internet Applications (WAI-ARIA) 1.2',
-  status: 'W3C Candidate Recommendation Draft 08 December 2021',
+  status: 'W3C Recommendation 06 June 2023',
   reference: 'https://www.w3.org/TR/wai-aria-1.2/',
   propertyDataTypes: {
     'aria-activedescendant': {
@@ -3630,13 +3630,61 @@ export default const ariaInfo = {
         'aria-invalid'
       ],
       supportedProps: [
+        'aria-orientation'
+      ],
+      hasRange: false,
+      requiredProps: [],
+      nameRequired: false,
+      nameFromContent: false,
+      nameProhibited: false,
+      childrenPresentational: true,
+      requiredParents: [],
+      requiredChildren: [],
+      roleType: 'structure',
+      isAbstract: false
+    },
+    separatorFocusable: {
+      inheritedProps: [
+        'aria-atomic',
+        'aria-busy',
+        'aria-controls',
+        'aria-current',
+        'aria-describedby',
+        'aria-details',
+        'aria-dropeffect',
+        'aria-errormessage',
+        'aria-flowto',
+        'aria-grabbed',
+        'aria-haspopup',
+        'aria-hidden',
+        'aria-invalid',
+        'aria-keyshortcuts',
+        'aria-label',
+        'aria-labelledby',
+        'aria-live',
+        'aria-owns',
+        'aria-relevant',
+        'aria-roledescription',
+        'aria-valuenow',
         'aria-disabled',
         'aria-orientation',
         'aria-valuemax',
         'aria-valuemin',
         'aria-valuetext'
       ],
-      hasRange: false,
+      deprecatedProps: [
+        'aria-errormessage',
+        'aria-haspopup',
+        'aria-invalid'
+      ],
+      supportedProps: [
+        'aria-disabled',
+        'aria-orientation',
+        'aria-valuemax',
+        'aria-valuemin',
+        'aria-valuetext'
+      ],
+      hasRange: true,
       requiredProps: [
         'aria-valuenow'
       ],
@@ -3646,7 +3694,7 @@ export default const ariaInfo = {
       childrenPresentational: true,
       requiredParents: [],
       requiredChildren: [],
-      roleType: 'structure widget',
+      roleType: 'widget range',
       isAbstract: false
     },
     slider: {

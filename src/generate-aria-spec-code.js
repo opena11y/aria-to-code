@@ -203,6 +203,17 @@ function getRoles(dom, roles, rolesWithRequiredChildren, rolesWithRequiredParent
       rolesWithNameProhibited.push(role);
     }
 
+    if (role === 'separator') {
+      roles['separatorFocusable'] = Object.assign({}, roles['separator']);
+
+      roles['separator'].roleType = 'structure';
+      roles['separatorFocusable'].roleType = 'widget range';
+
+      roles['separator'].supportedProps = ['aria-orientation'];
+      roles['separator'].requiredProps  = [];
+
+    }
+
   }
 
   roles['none'] = roles['presentation'];
@@ -440,7 +451,7 @@ function outputAsJSON(filename, info) {
 }
 
 function outputAsJSObject(filename, constName, info, data) {
-  const exportPrefix = `/* ${path.basename(filename)} is a generated file, see https://github.com/opena11y/aria-to-code */\nexport default const ${constName} = `;
+  const exportPrefix = `/* ${path.basename(filename)} is a generated file, see https://github.com/opena11y/aria-to-code */\nexport const ${constName} = `;
   const exportSuffix = `;${os.EOL}`;
 
   fs.writeFile(filename, exportPrefix + util.inspect(data, { compact: false, depth: null }) + exportSuffix, err => {
