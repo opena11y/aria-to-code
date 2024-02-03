@@ -51,9 +51,11 @@ Current files in releases directory:
 
 ## Change History
 
-### Version 1.1 (2/2/2024)
+### (2/2/2024)
 * Support for `role` role in the context of the `table`, `grid` and `treegrid` roles
 * Added support for ARIA versions
+* Support for ARIA 1.3 Spec
+
 
 
 
