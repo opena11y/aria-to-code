@@ -1,6 +1,6 @@
 {
   "name": "aria-to-code",
-  "version": "1.0.beta",
+  "version": "1.1",
   "description": "Parses the ARIA Specification information into a machine usable form as a JSON object and javascirpt include files.",
   "repository": {
     "type": "git",

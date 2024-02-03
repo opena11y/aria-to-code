@@ -7,12 +7,21 @@ import util  from 'util';
 import fetch from 'node-fetch';
 import HTMLParser from 'node-html-parser';
 
-const ariaInfoFilename          = path.join('releases', 'gen-aria-info.js');
-const ariaInfoFilenameJSON      = path.join('releases', 'gen-aria-info.json');
-const designPatternsFilename    = path.join('releases', 'gen-aria-role-design-patterns.js');
-const propertyDataTypesFilename = path.join('releases', 'gen-aria-property-data-types.js');
+const version = '1.2';
 
-let ariaURL = 'https://www.w3.org/TR/wai-aria-1.2/';
+const ariaInfoFilename          = path.join('releases', `gen-aria-info-${version}.js`);
+const ariaInfoFilenameJSON      = path.join('releases', `gen-aria-info-${version}.json`);
+const designPatternsFilename    = path.join('releases', `gen-aria-role-design-patterns-${version}.js`);
+const propertyDataTypesFilename = path.join('releases', `gen-aria-property-data-types-${version}.js`);
+
+let ariaURL = `https://www.w3.org/TR/wai-aria-${version}/`;
+
+const treegridOnlyProps = [
+  'aria-expanded',
+  'aria-posinset',
+  'aria-setsize',
+  'aria-level'
+];
 
 function getRoleType(elem) {
   let superClasses = [];
@@ -212,6 +221,31 @@ function getRoles(dom, roles, rolesWithRequiredChildren, rolesWithRequiredParent
       roles['separator'].supportedProps = ['aria-orientation'];
       roles['separator'].requiredProps  = [];
 
+    }
+
+    if (role === 'row') {
+      roles['rowGrid'] = Object.assign({}, roles['row']);
+
+      roles['row'].roleType     = 'structure';
+
+      roles['rowGrid'].roleType = 'widget';
+      roles['rowGrid'].inheritedProps = [...roles['rowGrid'].inheritedProps];
+      roles['rowGrid'].supportedProps = [...roles['row'].supportedProps];
+
+      roles['rowTreegrid'] = Object.assign({}, roles['rowGrid']);
+      roles['rowTreegrid'].supportedProps = [...roles['row'].supportedProps];
+
+      treegridOnlyProps.forEach( prop => {
+        const index = roles['row'].supportedProps.indexOf(prop);
+        console.log(`[${prop}: ${index}`);
+        if (index >= 0) {
+          roles['row'].supportedProps.splice(index, 1);
+          roles['rowGrid'].supportedProps.splice(index, 1);
+        }
+      })
+
+      const index = roles['row'].inheritedProps.indexOf('aria-disabled');
+      roles['row'].inheritedProps.splice(index, 1);
     }
 
   }

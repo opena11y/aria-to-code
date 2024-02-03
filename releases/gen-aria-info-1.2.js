@@ -1,4 +1,4 @@
-/* gen-aria-info.js is a generated file, see https://github.com/opena11y/aria-to-code */
+/* gen-aria-info-1.2.js is a generated file, see https://github.com/opena11y/aria-to-code */
 export const ariaInfo = {
   title: 'Accessible Rich Internet Applications (WAI-ARIA) 1.2',
   status: 'W3C Recommendation 06 June 2023',
@@ -3173,6 +3173,131 @@ export const ariaInfo = {
         'aria-current',
         'aria-describedby',
         'aria-details',
+        'aria-dropeffect',
+        'aria-errormessage',
+        'aria-flowto',
+        'aria-grabbed',
+        'aria-haspopup',
+        'aria-hidden',
+        'aria-invalid',
+        'aria-keyshortcuts',
+        'aria-label',
+        'aria-labelledby',
+        'aria-live',
+        'aria-owns',
+        'aria-relevant',
+        'aria-roledescription',
+        'aria-colindex',
+        'aria-expanded',
+        'aria-level',
+        'aria-posinset',
+        'aria-rowindex',
+        'aria-setsize',
+        'aria-selected'
+      ],
+      deprecatedProps: [
+        'aria-errormessage',
+        'aria-haspopup',
+        'aria-invalid'
+      ],
+      supportedProps: [
+        'aria-colindex',
+        'aria-rowindex',
+        'aria-selected'
+      ],
+      hasRange: false,
+      requiredProps: [],
+      nameRequired: false,
+      nameFromContent: true,
+      nameProhibited: false,
+      childrenPresentational: false,
+      requiredParents: [
+        'grid',
+        'rowgroup',
+        'table',
+        'treegrid'
+      ],
+      requiredChildren: [
+        'cell',
+        'columnheader',
+        'gridcell',
+        'rowheader'
+      ],
+      roleType: 'structure',
+      isAbstract: false
+    },
+    rowGrid: {
+      inheritedProps: [
+        'aria-activedescendant',
+        'aria-atomic',
+        'aria-busy',
+        'aria-controls',
+        'aria-current',
+        'aria-describedby',
+        'aria-details',
+        'aria-disabled',
+        'aria-dropeffect',
+        'aria-errormessage',
+        'aria-flowto',
+        'aria-grabbed',
+        'aria-haspopup',
+        'aria-hidden',
+        'aria-invalid',
+        'aria-keyshortcuts',
+        'aria-label',
+        'aria-labelledby',
+        'aria-live',
+        'aria-owns',
+        'aria-relevant',
+        'aria-roledescription',
+        'aria-colindex',
+        'aria-expanded',
+        'aria-level',
+        'aria-posinset',
+        'aria-rowindex',
+        'aria-setsize',
+        'aria-selected'
+      ],
+      deprecatedProps: [
+        'aria-errormessage',
+        'aria-haspopup',
+        'aria-invalid'
+      ],
+      supportedProps: [
+        'aria-colindex',
+        'aria-rowindex',
+        'aria-selected'
+      ],
+      hasRange: false,
+      requiredProps: [],
+      nameRequired: false,
+      nameFromContent: true,
+      nameProhibited: false,
+      childrenPresentational: false,
+      requiredParents: [
+        'grid',
+        'rowgroup',
+        'table',
+        'treegrid'
+      ],
+      requiredChildren: [
+        'cell',
+        'columnheader',
+        'gridcell',
+        'rowheader'
+      ],
+      roleType: 'widget',
+      isAbstract: false
+    },
+    rowTreegrid: {
+      inheritedProps: [
+        'aria-activedescendant',
+        'aria-atomic',
+        'aria-busy',
+        'aria-controls',
+        'aria-current',
+        'aria-describedby',
+        'aria-details',
         'aria-disabled',
         'aria-dropeffect',
         'aria-errormessage',
@@ -3228,7 +3353,7 @@ export const ariaInfo = {
         'gridcell',
         'rowheader'
       ],
-      roleType: 'structure widget',
+      roleType: 'widget',
       isAbstract: false
     },
     rowgroup: {
