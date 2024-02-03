@@ -1,4 +1,6 @@
 /* generate-aria-spec-code.js */
+/* aria-to-code generator version 1.1 */
+
 
 import fs    from 'fs';
 import os    from 'os';
@@ -7,14 +9,14 @@ import util  from 'util';
 import fetch from 'node-fetch';
 import HTMLParser from 'node-html-parser';
 
-const version = '1.3';
+const ariaVersion = '1.3';
 
-const ariaInfoFilename          = path.join('releases', `gen-aria-info-${version}.js`);
-const ariaInfoFilenameJSON      = path.join('releases', `gen-aria-info-${version}.json`);
-const designPatternsFilename    = path.join('releases', `gen-aria-role-design-patterns-${version}.js`);
-const propertyDataTypesFilename = path.join('releases', `gen-aria-property-data-types-${version}.js`);
+const ariaInfoFilename          = path.join('releases', `gen-aria-info-${ariaVersion}.js`);
+const ariaInfoFilenameJSON      = path.join('releases', `gen-aria-info-${ariaVersion}.json`);
+const designPatternsFilename    = path.join('releases', `gen-aria-role-design-patterns-${ariaVersion}.js`);
+const propertyDataTypesFilename = path.join('releases', `gen-aria-property-data-types-${ariaVersion}.js`);
 
-let ariaURL = `https://www.w3.org/TR/wai-aria-${version}/`;
+let ariaURL = `https://www.w3.org/TR/wai-aria-${ariaVersion}/`;
 
 const treegridOnlyProps = [
   'aria-expanded',
@@ -104,8 +106,8 @@ function getRoles(dom, roles, rolesWithRequiredChildren, rolesWithRequiredParent
     let  role = elem.querySelector('h4.role-name code').textContent.trim();
 
     if ((role === 'roletype' || role === 'image') ||
-        (version === '1.2' && role === 'none') ||
-        (version === '1.3' && role === 'presentation')) {
+        (ariaVersion === '1.2' && role === 'none') ||
+        (ariaVersion === '1.3' && role === 'presentation')) {
       continue;
     }
 
@@ -464,7 +466,7 @@ function getAriaInformation(dom) {
 
   getRoles(dom, ariaInfo.designPatterns, ariaInfo.rolesWithRequiredChildren, ariaInfo.rolesWithRequiredParent, ariaInfo.rolesWithNameProhibited, ariaInfo.rolesWithDeprecatedAttributes, ariaInfo.attributesThatMaybeDeprecated, ariaInfo.rolesThatAllowNameFromContents);
 
-  if (version === '1.2') {
+  if (ariaVersion === '1.2') {
     ariaInfo.designPatterns['none']  = ariaInfo.designPatterns['presentation'];
     ariaInfo.rolesWithNameProhibited.push('none');
   }
