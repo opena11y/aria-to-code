@@ -30,7 +30,7 @@ These steps assume you have both `git` and `node.js` installed on your computer.
 
 The following four files are created in the `releases` directory.
 
-| File Name | Format | Role Design Pattern Info | Property and State Value Info |
+| File Name | Format | Role Info | Prop. and State Info |
 | --------- | ------ | ------------------------ | ----------------------------- |
 | gen-aria-role-design-patterns-{ver}.js | JS Module   | Yes | no  |
 | gen-aria-info-{ver}.json               | JSON Object | Yes | Yes |
