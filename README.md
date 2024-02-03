@@ -8,8 +8,8 @@ In the ARIA spec there are special case for the following roles:
 
 | Role | Context | Objects created |
 | --------- | ------------------------ | ----------------------------- |
-| `separator` | tabindex |  creates both `separator` and 'separatorFocusable' objects to support separators with a tabindex values, this is sometimes commonly called a splitter widget for adjusting window sizes. |
-| `row` | `grid` and `treegrid` | There are different properties associated with grid and treegrid for the `row` role.  Creates a `row`, `rowGrid` and `rowTreegrid` objects to support the differences. |
+| `separator` | tabindex |  When the `separator` role is focusable (e.g. `tabindex` value) and the separator is considered a widget.  This is represented by including a 'separatorFocusable'.  Focusable separators are sometimes commonly referred to as a splitter widget and used for adjusting the size of window. |
+| `row` | `table`, `grid` and `treegrid` | There are different properties associated with the context of `table`, `grid` and `treegrid` roles for the `row` role.  Creates a `row`, `rowGrid` and `rowTreegrid` objects to support the differences. |
 
 
 ## Creating the JSON and JS files
@@ -42,5 +42,6 @@ The following four files are created in the `releases` directory.
 ### Version 1.1 (2/2/2024)
 * Support for `role` role in the context of the `table`, `grid` and `treegrid` roles
 * Added support for ARIA versions
+
 
 
