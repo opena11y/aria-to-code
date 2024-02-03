@@ -32,10 +32,10 @@ The following four files are created in the `releases` directory.
 
 | File Name | Format | Role Design Pattern Info | Property and State Value Info |
 | --------- | ------ | ------------------------ | ----------------------------- |
-| [gen-aria-role-design-patterns.js](releases/gen-aria-role-design-patterns.js) | JS Module   | Yes | no  |
-| [gen-aria-info.json](releases/gen-aria-info.json)                             | JSON Object | Yes | Yes |
-| [gen-aria-info.js](releases/gen-aria-info.js)                                 | JS Module   | Yes | Yes |
-| [gen-aria-property-data-types.js](releases/gen-aria-property-data-types.js)   | JS Module   | no  | Yes |
+| [gen-aria-role-design-patterns.js](releases/gen-aria-role-design-patterns-{ver}.js) | JS Module   | Yes | no  |
+| [gen-aria-info.json](releases/gen-aria-info-{ver}.json)                             | JSON Object | Yes | Yes |
+| [gen-aria-info.js](releases/gen-aria-info-{ver}.js)                                 | JS Module   | Yes | Yes |
+| [gen-aria-property-data-types.js](releases/gen-aria-property-data-types-{ver}.js)   | JS Module   | no  | Yes |
 
 ## Change History
 
