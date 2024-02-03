@@ -7,7 +7,7 @@ import util  from 'util';
 import fetch from 'node-fetch';
 import HTMLParser from 'node-html-parser';
 
-const version = '1.2';
+const version = '1.3';
 
 const ariaInfoFilename          = path.join('releases', `gen-aria-info-${version}.js`);
 const ariaInfoFilenameJSON      = path.join('releases', `gen-aria-info-${version}.json`);
@@ -103,7 +103,9 @@ function getRoles(dom, roles, rolesWithRequiredChildren, rolesWithRequiredParent
     let elem = elems[i];
     let  role = elem.querySelector('h4.role-name code').textContent.trim();
 
-    if (role === 'none' || role === 'roletype') {
+    if ((role === 'roletype' || role === 'image') ||
+        (version === '1.2' && role === 'none') ||
+        (version === '1.3' && role === 'presentation')) {
       continue;
     }
 
@@ -212,6 +214,7 @@ function getRoles(dom, roles, rolesWithRequiredChildren, rolesWithRequiredParent
       rolesWithNameProhibited.push(role);
     }
 
+
     if (role === 'separator') {
       roles['separatorFocusable'] = Object.assign({}, roles['separator']);
 
@@ -249,8 +252,6 @@ function getRoles(dom, roles, rolesWithRequiredChildren, rolesWithRequiredParent
     }
 
   }
-
-  roles['none'] = roles['presentation'];
 
   // Update the roleType to abstract roles
 
@@ -463,8 +464,15 @@ function getAriaInformation(dom) {
 
   getRoles(dom, ariaInfo.designPatterns, ariaInfo.rolesWithRequiredChildren, ariaInfo.rolesWithRequiredParent, ariaInfo.rolesWithNameProhibited, ariaInfo.rolesWithDeprecatedAttributes, ariaInfo.attributesThatMaybeDeprecated, ariaInfo.rolesThatAllowNameFromContents);
 
-  ariaInfo.designPatterns['none'] = ariaInfo.designPatterns['presentation'];
-  ariaInfo.rolesWithNameProhibited.push('none');
+  if (version === '1.2') {
+    ariaInfo.designPatterns['none']  = ariaInfo.designPatterns['presentation'];
+    ariaInfo.rolesWithNameProhibited.push('none');
+  }
+  else {
+    ariaInfo.designPatterns['presentation']  = ariaInfo.designPatterns['none'];
+    ariaInfo.rolesWithNameProhibited.push('presentation');
+    ariaInfo.designPatterns['image'] = ariaInfo.designPatterns['img'];
+  }
 
   getProps(dom, ariaInfo.propertyDataTypes);
 

@@ -37,6 +37,18 @@ The following four files are created in the `releases` directory.
 | [gen-aria-info-{ver}.js](releases/gen-aria-info-1.2.js)                                 | JS Module   | Yes | Yes |
 | [gen-aria-property-data-types-{ver}.js](releases/gen-aria-property-data-types-1.2.js)   | JS Module   | no  | Yes |
 
+Current files in releases directory:
+
+* [gen-aria-role-design-patterns-1.2.js](releases/gen-aria-role-design-patterns-1.2.js)
+* [gen-aria-info-1.2.json](releases/gen-aria-info-1.2.json)
+* [gen-aria-info-1.2.js](releases/gen-aria-info-1.2.js)
+* [gen-aria-property-data-types-1.2.js](releases/gen-aria-property-data-types-1.2.js)
+* [gen-aria-role-design-patterns-1.3.js](releases/gen-aria-role-design-patterns-1.3.js)
+* [gen-aria-info-1.3.json](releases/gen-aria-info-1.3.json)
+* [gen-aria-info-1.3.js](releases/gen-aria-info-1.3.js)
+* [gen-aria-property-data-types-1.3.js](releases/gen-aria-property-data-types-1.3.js)
+
+
 ## Change History
 
 ### Version 1.1 (2/2/2024)
